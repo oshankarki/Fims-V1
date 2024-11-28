@@ -1,0 +1,17 @@
+# Testing
+
+# RewriteEngine On
+# RewriteRule ^test\.html$ /index.html [L]
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /fimsasia/
+    
+    # Redirect /fimsasia to /fimsasia/index.php
+    RewriteRule ^index\.php$ - [L]
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule . /fimsasia/index.php [L]
+</IfModule>
+
+
